@@ -30,7 +30,8 @@
 (defn solve2 [input]
   (->> input
     (str/split-lines)
-    (map tokenize)
-    (map find-divisible)
-    (map #(apply divide %))
+    (map (comp
+           #(apply divide %)
+           find-divisible
+           tokenize))
     (apply +)))
