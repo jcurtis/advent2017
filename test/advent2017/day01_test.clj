@@ -36,8 +36,9 @@
   (expect [1 1 1 1] (filter-vector [1 1 1 1] next-index))
   (expect [] (filter-vector [1 2 3 4] next-index)))
 
-(println "day01 solve1" (solve1 input))
-(expect 1069 (solve1 input))
+(let [r (solve1 input)]
+  (println "day01 solve1" r)
+  (expect 1069 r))
 
 ; part 2
 
@@ -55,5 +56,6 @@
   (expect 12 (solve2 "123123"))
   (expect 4 (solve2 "12131415")))
 
-(println "day01 solve2" (solve2 input))
-(expect 1268 (solve2 input))
+(let [r (solve2 input)]
+  (println "day01 solve2" r)
+  (expect 1268 r))
