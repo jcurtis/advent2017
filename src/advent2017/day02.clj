@@ -13,8 +13,8 @@
 
 (defn solve1 [input]
   (apply +
-    (map checksum-vec
-      (map tokenize (str/split-lines input)))))
+         (map checksum-vec
+              (map tokenize (str/split-lines input)))))
 
 ; part 2
 
@@ -29,9 +29,9 @@
 
 (defn solve2 [input]
   (->> input
-    (str/split-lines)
-    (map (comp
-           #(apply divide %)
-           find-divisible
-           tokenize))
-    (apply +)))
+       (str/split-lines)
+       (map (comp
+             #(apply divide %)
+             find-divisible
+             tokenize))
+       (apply +)))

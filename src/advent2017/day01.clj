@@ -20,9 +20,9 @@
 (defn filter-vector
   [v f]
   (keep-indexed
-    (fn [i x]
-      (validate-vector-item i v f))
-    v))
+   (fn [i x]
+     (validate-vector-item i v f))
+   v))
 
 (defn solve1
   [input]

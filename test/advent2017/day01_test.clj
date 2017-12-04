@@ -32,7 +32,7 @@
   (expect 9 (validate-vector-item 7 [9 1 2 1 2 1 2 9] next-index)))
 
 (defexpect filter-vector-tests
-  (expect [1 2 ] (filter-vector [1 1 2 2] next-index))
+  (expect [1 2] (filter-vector [1 1 2 2] next-index))
   (expect [1 1 1 1] (filter-vector [1 1 1 1] next-index))
   (expect [] (filter-vector [1 2 3 4] next-index)))
 
