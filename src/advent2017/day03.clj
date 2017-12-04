@@ -19,12 +19,12 @@
   (iterate (fn [[layer side last]]
              (let [newSide (+ side 2)]
                [(inc layer) newSide (+ last (layer-size newSide))]))
-          [0 1 1]))
+           [0 1 1]))
 
 (defn find-layer-of [n]
   (first (filter (fn [[layer side last]]
                    (<= n last))
-           spiral-layers)))
+                 spiral-layers)))
 
 (defn find-position-in-layer [[layer side last] n]
   (let [[l s t] (nth spiral-layers (dec layer))]
@@ -39,3 +39,16 @@
 (def solve1 find-dist)
 
 ; part 2
+
+; 147  142  133  122   59
+; 304    5    4    2   57
+; 330   10    1    1   54
+; 351   11   23   25   26
+; 362  747  806--->   ...
+
+(defn spiral-expo
+  ([] (spiral-expo 0 1))
+  ([i val] (lazy-seq (cons val (spiral-expo (inc i) val)))))
+
+(defn solve2 [n]
+  n)
