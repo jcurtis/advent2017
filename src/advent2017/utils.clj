@@ -2,3 +2,6 @@
 
 (defn parse-int [s]
   (Integer/parseInt (str s)))
+
+(defn distance [a b]
+  (+ (Math/abs a) (Math/abs b)))
