@@ -12,15 +12,15 @@
 
 (defn validate [line]
   (not (some
-         (fn [[a b]] (= a b))
-         (combins line))))
+        (fn [[a b]] (= a b))
+        (combins line))))
 
 (defn solve1 [input]
   (->> input
-    (str/split-lines)
-    (map validate)
-    (filter true?)
-    (count)))
+       (str/split-lines)
+       (map validate)
+       (filter true?)
+       (count)))
 
 ; part 2
 
@@ -29,12 +29,12 @@
 
 (defn validate2 [line]
   (not (some
-         (fn [[a b]] (anagram? a b))
-         (combins line))))
+        (fn [[a b]] (anagram? a b))
+        (combins line))))
 
 (defn solve2 [input]
   (->> input
-    (str/split-lines)
-    (map validate2)
-    (filter true?)
-    (count)))
+       (str/split-lines)
+       (map validate2)
+       (filter true?)
+       (count)))
