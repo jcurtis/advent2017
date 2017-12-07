@@ -5,8 +5,8 @@
 ; part 1
 (defn tokenize [input]
   (-> input
-    (str/split #"\n")
-    (->> (map utils/parse-int))))
+      (str/split #"\n")
+      (->> (map utils/parse-int))))
 
 (defn jump
   [i ins step]
@@ -20,10 +20,10 @@
   (loop [i 0
          ins (vec (tokenize input))
          step 0]
-        (if (escaped? i ins)
-          step
-          (let [[idx v s] (jumpf i ins step)]
-            (recur idx v s)))))
+    (if (escaped? i ins)
+      step
+      (let [[idx v s] (jumpf i ins step)]
+        (recur idx v s)))))
 
 (defn solve1 [input]
   (solve input jump))
@@ -33,7 +33,7 @@
 (defn jump2 [i ins step]
   (let [offset (nth ins i)
         offset_bal (if (>= offset 3) (dec offset) (inc offset))]
-      [(+ i offset) (assoc ins i offset_bal) (inc step)]))
+    [(+ i offset) (assoc ins i offset_bal) (inc step)]))
 
 (defn solve2 [input]
   (solve input jump2))
